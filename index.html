@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redacted</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- <link type="image/x-icon" rel="shortcut icon" href="./Images/clippy.png"> -->
+  </head>
+
+  <body>
+    <header class="card">
+      <div class="card-header">
+        <h1>Classify</h1>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <form class="card">
+        <h2>Remove:</h2>
+        <div class="form-row">
+          <div class='col-xs-12 col-md-12 col-lg-12'>
+
+            <div class='form-row'>
+              <div class="form-group col-xs-12">
+                <label class="form-check-label" for="removeThese">Words to Remove</label>
+                <input id="removeThese" class="form-control-range col-xs-12" type="text" value="'horse steak' 'squid leg/' banana '' ' ' cat &quot;dog bone 'the' treat&quot; donkey"/>
+              </div>
+            </div>
+
+            <div class='form-row'>
+              <div class="form-group col-xs-12">
+                <label class="form-check-label" for="toClassify">Text</label>
+                <textarea id="toClassify" class="form-control-range" type="text">Banana ate the cat and squid leg the dog bone the treat, dog bone 'the' treat</textarea>
+              </div>
+            </div>
+
+            <div class='form-row'>
+              <div class="form-group col-xs-12">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="ignoreCase">
+                  <label class="form-check-label" for="ignoreCase">Ignore Case</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="ignoreSpecials">
+                  <label class="form-check-label" for="ignoreSpecials">Ignore Specials</label>
+                  <small id="specialsHelp" class="form-text text-muted">(e.g. ()!@#$%^&*_+-={}[]|\:";',./&lt;&gt;?~`)</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="redact">Redact Words</button>
+      </form>
+
+      <div class="card">
+          <h2>Removed:</h2>
+        <div class="card-body">
+          <div class='form-row'>
+            <div class="form-group col-xs-12">
+          <textarea
+            readonly
+            id="removedThese"
+            placeholder="Your Redacted Document"
+            aria-label="Your Redacted Document"
+          ></textarea>
+          </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-success" id="copy">Copy Document</button>
+      </div>
+      <!-- TOAST -->
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-body">
+        </div>
+      </div>
+
+      </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
